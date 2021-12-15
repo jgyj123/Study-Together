@@ -1,0 +1,38 @@
+.chat__main {
+  width: 80%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.receiver {
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  height: 2.5vh;
+}
+.receiver p {
+  margin-right: 4px;
+}
+.chat_bottom {
+  width: 100%;
+  border-top: 1px dotted black;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+}
+.chat_bottom > input {
+  width: 80%;
+  height: 3vh;
+  border-radius: 25px;
+  margin-top: 2px;
+  padding: 3px;
+  margin-left: 3px;
+}
+.but {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.contact__icons {
+  cursor: pointer;
+}

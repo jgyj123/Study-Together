@@ -1,0 +1,79 @@
+.MainListQ {
+  background-color: #00adb5;
+  height: 93vh;
+  width: 100%;
+  float: left;
+}
+.header__top__ {
+  display: flex;
+  width: 100%;
+  margin: 2%;
+  position: relative;
+}
+.question__tile {
+  border: 1px solid black;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 4rem;
+  height: 20vh;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+.segment__name {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+.segment_title {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.segment_fluffy {
+  background-color: lightgreen;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.segment_description {
+  height: 80%;
+}
+
+.tile__bottom2 {
+  height: 80%;
+}
+.contact__icons {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.tile__footer {
+  border-top: 1px solid dotted;
+}
+
+.facultyName {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.addQuestionButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 10vw;
+  width: 10vw;
+  margin-top: 2vh;
+}
+.segment_description {
+  margin-left: 5px;
+}
+.chat_ {
+  margin-top: 1.3rem;
+  margin-right: auto;
+  float: right;
+  width: 100%;
+}

@@ -1,0 +1,14 @@
+.make__friends__main {
+  width: 100vw;
+  height: 91vh;
+  float: left;
+  background-color: #00adb5;
+  display: flex;
+}
+.make__friends__left {
+  width: 45%;
+  margin-left: auto;
+}
+.make__friends__right {
+  width: 50%;
+}

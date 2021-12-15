@@ -1,0 +1,19 @@
+.functions {
+  display: flex;
+  background-color: #00adb5;
+  justify-content: space-around;
+  height: 91vh;
+}
+
+.box {
+  margin-top: 10vh;
+  background-color: white;
+  height: 15rem;
+  border-radius: 10px;
+}
+.box__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}

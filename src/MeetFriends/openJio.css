@@ -1,0 +1,21 @@
+.add__bottom input {
+  height: 80%;
+  width: 70%;
+}
+.add_button_container {
+  margin-left: 2vw;
+}
+.meetup_tiles {
+  height: 80vh;
+  margin-top: 1vh;
+  overflow: auto;
+}
+.top__main {
+  width: 80%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+}
+.meetup__container {
+  margin-bottom: 1rem;
+}

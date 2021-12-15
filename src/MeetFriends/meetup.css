@@ -1,0 +1,36 @@
+.meetup__main {
+  background-color: white;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+}
+.user__info {
+  display: flex;
+  align-items: center;
+}
+.meetup__bottom {
+  height: 15rem;
+}
+.meetup__title {
+  font-weight: bold;
+}
+.meetup__top {
+  border-bottom: 1px dotted black;
+}
+.join_button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.joined__users {
+  display: flex;
+  margin-left: 4px;
+}
+.meetup__description {
+  margin-left: 5px;
+}

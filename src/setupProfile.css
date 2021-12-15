@@ -1,0 +1,69 @@
+.setup__main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00adb5;
+  height: 91vh;
+}
+.details {
+  width: 30vw;
+  background-color: rgb(240, 240, 240);
+  margin: auto;
+  height: 65vh;
+  border-radius: 25px;
+  margin-bottom: 15rem;
+  border: 1px solid black;
+}
+.form__setup__section input {
+  width: 100%;
+  height: 3vh;
+
+  border-radius: 10px;
+}
+.form__setup__section select {
+  width: 100%;
+  height: 3.5vh;
+  border-radius: 10px;
+}
+.setup__form {
+  height: 50vh;
+  width: 90%;
+  margin-top: 5vh;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgb(240, 240, 240);
+}
+.labels {
+  font-size: 15px;
+  font-weight: bold;
+}
+.form__setup__section {
+  width: 46%;
+  margin: 2%;
+}
+#description {
+  width: 94%;
+  height: 15vh;
+  border-radius: 10px;
+  margin: auto;
+  margin-left: 2%;
+}
+.description {
+  width: 100%;
+  margin: auto;
+  margin-top: 4vh;
+}
+.button_div {
+  width: 94%;
+  margin-left: 2%;
+
+  margin-top: 1rem;
+}
+
+.button_div {
+  position: relative;
+}
+.form__row {
+  display: flex;
+}

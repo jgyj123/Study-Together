@@ -1,0 +1,10 @@
+.friend__tile {
+  margin-bottom: 1rem;
+}
+.newFriends {
+  overflow: auto;
+  height: 70vh;
+}
+.top__div {
+  height: 8vh;
+}
