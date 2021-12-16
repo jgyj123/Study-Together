@@ -20,7 +20,6 @@ const ListOfQuestions = () => {
   const userDB = collection(db, "users");
   let questions = [];
   const [test, setTest] = useState([]);
-  const [sp, setSP] = useState({});
   const [one, setOne] = useState([]);
 
   let ans = [];
@@ -55,32 +54,39 @@ function fetchUser(userid) {
   }}*/
 
   const fetchData = () => {
-    const q = query(colRef, where("faculty", "==", fac2.join(" ")));
-    onSnapshot(q, (sn) => {
-      sn.docs.map((doc) => {
-        questions.push({ ...doc.data() });
+    const q = query(colRef, where("QuestionFaculty", "==", fac2.join(" ")));
+    onSnapshot(q, (snapshot) => {
+      let books = [];
+      snapshot.docs.map((doc) => {
+        books.push({ ...doc.data(), id: doc.id });
       });
-      setTest(questions);
+      setTest(books);
     });
   };
 
-  for (let i = 0; i < test.length; i++) {
-    const u = query(userDB, where("id", "==", test[i].name));
-    onSnapshot(u, (sn) => {
-      sn.docs.map((doc) => {
-        ans.push({
-          name: doc.data().username,
-          faculty: doc.data().faculty,
-          hall: doc.data().hall,
-          title: test[i].title,
-          description: test[i].details,
-        });
-        setOne(ans);
-      });
-    });
+  const setone = () => {
+    let books = [];
+    for (let i = 0; i < test.length; i++) {
+      const u = query(userDB, where("id", "==", test[i].name));
 
-    console.log(ans);
-  }
+      onSnapshot(u, (sn) => {
+        sn.docs.map((doc) => {
+          books.push({
+            name: doc.data().username,
+            faculty: doc.data().faculty,
+            hall: doc.data().hall,
+            title: test[i].title,
+            description: test[i].details,
+          });
+          console.log(books);
+          setOne(books);
+          console.log(one);
+        });
+      });
+    }
+  };
+
+  console.log(test);
 
   function closeChat() {
     setChatOpen(false);
@@ -121,7 +127,7 @@ function fetchUser(userid) {
         <AddQuestion setIsAdd={setIsAdd} />
       ) : (
         <div className="QuestionList">
-          {one.map((req) => (
+          {test.map((req) => (
             <div className="question__tile">
               <div className="tile__top">
                 <div className="segment__name">
@@ -133,7 +139,7 @@ function fetchUser(userid) {
               </div>
               <div className="tile__bottom2">
                 <div className="segment_title"> Title: {req.title}</div>
-                <div className="segment_description"> {req.description}</div>
+                <div className="segment_description"> {req.details}</div>
                 <div className="tile__footer">
                   <div className="segment_Reply"></div>
                   <div

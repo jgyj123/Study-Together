@@ -2,7 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./AddQuestion.css";
 import Facultydata from "./FacultyData";
 import { getFirestore } from "firebase/firestore";
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  query,
+  onSnapshot,
+  where,
+} from "firebase/firestore";
 import { auth } from "../firebase.js";
 import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
@@ -12,9 +19,21 @@ const AddQuestion = (props) => {
   const [details, setDetails] = useState("");
   const [selectedFile, setSelectedFile] = useState();
   const [isFilePicked, setIsFilePicked] = useState(false);
+  const [user, setUser] = useState({});
   const db = getFirestore();
   const colRef = collection(db, "question");
   const person = auth.currentUser;
+  const colRef2 = collection(db, "users");
+  const q = query(colRef2, where("id", "==", person.uid));
+  useEffect(() => {
+    onSnapshot(q, (snapshot) => {
+      let books = [];
+      snapshot.docs.map((doc) => {
+        books.push({ ...doc.data(), id: doc.id });
+      });
+      setUser(books[0]);
+    });
+  }, []);
 
   const handleFile = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -26,9 +45,11 @@ const AddQuestion = (props) => {
     props.setIsAdd(false);
     addDoc(colRef, {
       title: title,
-      faculty: faculty,
+      QuestionFaculty: faculty,
       details: details,
-      name: person.uid,
+      name: user.username,
+      faculty: user.faculty,
+      hall: user.hall,
     });
     console.log(title);
   };
@@ -37,7 +58,11 @@ const AddQuestion = (props) => {
     <div className="main">
       <form className="addQuestionForm">
         <div className="QuestionHeader">
-          <Typography fontFamily="Open Sans" variant="h2">
+          <Typography
+            fontFamily="Merriweather Sans"
+            variant="h2"
+            align="center"
+          >
             What do you want to know?
           </Typography>
         </div>
